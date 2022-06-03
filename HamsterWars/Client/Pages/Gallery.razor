@@ -1,0 +1,25 @@
+﻿@page "/gallery"
+@inject HttpClient Http
+@using HamsterWars.Shared
+
+<h3>Gallery</h3>
+
+@if (hamsters is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    }
+}
+
+@code {
+    private Hamster? hamsters;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hamsters = await Http.GetFromJsonAsync<Hamster>("/api/GetAll");
+    }
+
+}
