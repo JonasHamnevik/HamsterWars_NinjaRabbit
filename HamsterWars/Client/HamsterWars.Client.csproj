@@ -12,11 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\Services.csproj" />
     <ProjectReference Include="..\Shared\HamsterWars.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Hamsters\" />
   </ItemGroup>
 
 </Project>
