@@ -1,6 +1,10 @@
-﻿.container {
+﻿.head{
+    text-align: center;
+}
+
+.container {
     position: relative;
-    width: 110%;
+    width: 100%;
     text-align: center
 }
 
@@ -8,9 +12,10 @@
     opacity: 1;
     display: block;
     width: 100%;
-    height: auto;
+    height: 300px;
     transition: .5s ease;
     backface-visibility: hidden;
+    padding-bottom: 2em;
 }
 
 .middle {

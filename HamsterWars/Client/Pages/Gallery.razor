@@ -3,7 +3,7 @@
 @using HamsterWars.Shared
 <link href="/css/styles/styles.css" rel="stylesheet" />
 
-<h3>Gallery</h3>
+<h3 class="head">Gallery</h3>
 
 @if (hamsters is null)
 {
@@ -16,7 +16,7 @@ else
         {
             <div class="col-sm-4">
                 <div class="container">
-                    <div><h4 style="">@hamster.Name</h4></div>
+                    <div><h4>@hamster.Name</h4></div>
                     <img class="image" src="/images/hamsters/@hamster.ImageName" alt="Hamster image">
                     <div class="middle">
                         <ul class="list-group">
