@@ -11,35 +11,39 @@
 }
 else
 {
-    @foreach (var hamster in hamsters)
-    {
-        <div class="container">
-            <div><h4 style="">@hamster.Name</h4></div>
-            <img class="image" src="/images/hamsters/@hamster.ImageName" alt="Hamster image">
-            <div class="middle">
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Age:<span> @hamster.Age</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Favourite Food:<span> @hamster.FavouriteFood</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Loves:<span> @hamster.Loves</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Wins:<span> @hamster.Wins</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Losses:<span> @hamster.Losses</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Games:<span>@hamster.Games</span>
-                    </li>
-                </ul>
+    <div class="row">
+        @foreach (var hamster in hamsters)
+        {
+            <div class="col-sm-4">
+                <div class="container">
+                    <div><h4 style="">@hamster.Name</h4></div>
+                    <img class="image" src="/images/hamsters/@hamster.ImageName" alt="Hamster image">
+                    <div class="middle">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Age:<span> @hamster.Age</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Favourite Food:<span> @hamster.FavouriteFood</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Loves:<span> @hamster.Loves</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Wins:<span> @hamster.Wins</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Losses:<span> @hamster.Losses</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Games:<span>@hamster.Games</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 }
 
 @code {
