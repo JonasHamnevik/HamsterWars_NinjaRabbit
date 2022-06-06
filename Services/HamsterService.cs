@@ -15,5 +15,4 @@ public class HamsterService
     {
         return _context.Hamsters.Any(h => h.Id == id);
     }
-
 }

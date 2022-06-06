@@ -45,7 +45,7 @@ else
                             </li>
                         </ul>
                     </div>
-                    <button class="oi oi-trash"></button>
+                    <button class="oi oi-trash" @onclick="() => Delete(hamster.Id)"></button>
                 </div>
             </div>
         }
@@ -60,4 +60,9 @@ else
         hamsters = await Http.GetFromJsonAsync<Hamster[]>("/api/hamster/GetAll");
     }
 
+    private async Task Delete(int id)
+    {
+        await Http.DeleteAsync($"api/Hamster/Delete{id}");
+        await OnInitializedAsync();
+    }
 }

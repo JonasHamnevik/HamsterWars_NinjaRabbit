@@ -42,7 +42,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Ipaku",
-                    Age = 4,
+                    Age = 2,
                     FavouriteFood = "Hard boiled eggs",
                     Loves = "Hamsterwheels",
                     ImageName = "/hamster-3.jpg"
@@ -51,7 +51,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Indigo",
-                    Age = 5,
+                    Age = 3,
                     FavouriteFood = "Cucumbers",
                     Loves = "His owners",
                     ImageName = "/hamster-4.jpg"
@@ -96,7 +96,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Gabby",
-                    Age = 6,
+                    Age = 1,
                     FavouriteFood = "Carrots",
                     Loves = "Sleeping",
                     ImageName = "/hamster-9.jpg"
@@ -105,7 +105,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Dessy",
-                    Age = 4,
+                    Age = 2,
                     FavouriteFood = "Hard boiled eggs",
                     Loves = "Hamsterwheels",
                     ImageName = "/hamster-10.jpg"
@@ -132,7 +132,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Victoria",
-                    Age = 4,
+                    Age = 3,
                     FavouriteFood = "Crackers",
                     Loves = "Food",
                     ImageName = "/hamster-13.jpg"
@@ -159,7 +159,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Quinn",
-                    Age = 5,
+                    Age = 1,
                     FavouriteFood = "Apples",
                     Loves = "Hamsterwheels",
                     ImageName = "/hamster-16.jpg"
@@ -168,7 +168,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Ronnie",
-                    Age = 7,
+                    Age = 2,
                     FavouriteFood = "Cucumbers",
                     Loves = "His owners",
                     ImageName = "/hamster-17.jpg"
@@ -177,7 +177,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Yamon",
-                    Age = 5,
+                    Age = 3,
                     FavouriteFood = "Apples",
                     Loves = "Sleeping",
                     ImageName = "/hamster-18.jpg"
@@ -195,7 +195,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Jock",
-                    Age = 4,
+                    Age = 1,
                     FavouriteFood = "Crackers",
                     Loves = "Hamsterwheels",
                     ImageName = "/hamster-20.jpg"
@@ -213,7 +213,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Uma",
-                    Age = 5,
+                    Age = 2,
                     FavouriteFood = "Carrots",
                     Loves = "His owners",
                     ImageName = "/hamster-22.jpg"
@@ -240,7 +240,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Zia",
-                    Age = 4,
+                    Age = 3,
                     FavouriteFood = "Apples",
                     Loves = "Hamsterwheels",
                     ImageName = "/hamster-25.jpg"
@@ -249,7 +249,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Remi",
-                    Age = 5,
+                    Age = 2,
                     FavouriteFood = "Carrots",
                     Loves = "Food",
                     ImageName = "/hamster-26.jpg"
@@ -258,7 +258,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Genevieve",
-                    Age = 7,
+                    Age = 1,
                     FavouriteFood = "Apples",
                     Loves = "Sleeping",
                     ImageName = "/hamster-27.jpg"
@@ -285,7 +285,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Galina",
-                    Age = 5,
+                    Age = 2,
                     FavouriteFood = "Cucumbers",
                     Loves = "Food",
                     ImageName = "/hamster-30.jpg"
@@ -303,7 +303,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Inet",
-                    Age = 4,
+                    Age = 3,
                     FavouriteFood = "Crackers",
                     Loves = "Hamsterwheels",
                     ImageName = "/hamster-32.jpg"
@@ -321,7 +321,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Dixie",
-                    Age = 7,
+                    Age = 1,
                     FavouriteFood = "Apples",
                     Loves = "Food",
                     ImageName = "/hamster-34.jpg"
@@ -330,7 +330,7 @@ public class SeedData
                 new Hamster
                 {
                     Name = "Bonita",
-                    Age = 6,
+                    Age = 2,
                     FavouriteFood = "Hard boiled eggs",
                     Loves = "Sleeping",
                     ImageName = "/hamster-35.jpg"

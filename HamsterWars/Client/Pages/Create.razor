@@ -1,36 +1,43 @@
 ﻿@page "/create"
-@using HamsterWars.Shared
 @inject HttpClient Http
+@inject NavigationManager Navigate
+@using HamsterWars.Shared
+<link href="/css/styles/styles.css" rel="stylesheet" />
+
 
 <h3>Create</h3>
 
-<EditForm Model="@newHamster" OnInvalidSubmit="AddHamster">
+<EditForm Model="@newHamster" OnValidSubmit="AddHamster">
+    <DataAnnotationsValidator />
     <div class="col-sm-6 mx-auto">
         <div class="form">
             <label for="name">Name</label>
-            <InputText @bind-Value="newHamster.Name" class="form-control" />
+            <InputText id="name" @bind-Value="newHamster.Name" class="form-control" />
 
             <label for="age">Age</label>
-            <InputNumber @bind-Value="newHamster.Age" class="form-control" />
+            <InputNumber id="age" @bind-Value="newHamster.Age" class="form-control" />
 
             <label for="image">Photo</label>
-            <InputFile @bind-Value="newHamster.ImageName" class="form-control"/>
+            <InputText id="photo" @bind-Value="newHamster.ImageName" class="form-control" />
 
             <label for="favFood">Favourite Food</label>
-            <InputText name="favFood" @bind-Value="newHamster.FavouriteFood" class="form-control" />
+            <InputText id="favFood" name="favFood" @bind-Value="newHamster.FavouriteFood" class="form-control" />
 
             <label for="loves">Loves</label>
-            <InputText name="loves" @bind-Value="newHamster.Loves" class="form-control" />
+            <InputText id="loves" name="loves" @bind-Value="newHamster.Loves" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary float-end">Add</button>
+        <ValidationSummary />
     </div>
 </EditForm>
 
 @code {
-    Hamster newHamster = new Hamster();
+    private Hamster newHamster = new();
 
-    async void AddHamster()
+    private void AddHamster()
     {
-        await Http.PostAsJsonAsync<Hamster>("api/Hamster/Create", newHamster);
+        Http.PostAsJsonAsync("api/Hamster/", newHamster);
+
+        Navigate.NavigateTo("/gallery");
     }
 }

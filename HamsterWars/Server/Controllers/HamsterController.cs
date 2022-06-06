@@ -28,18 +28,11 @@ public class HamsterController : ControllerBase
     [HttpGet("{id:int}")]
     public async Task<ActionResult<Hamster>> GetById(int id)
     {
-        try
-        {
-            var hamster = await _context.Hamsters.FirstOrDefaultAsync((h) => h.Id == id);
+        var hamster = await _context.Hamsters.FirstOrDefaultAsync((h) => h.Id == id);
 
-            if (hamster is null)
-                return NotFound();
-            return Ok(hamster);
-        }
-        catch (Exception)
-        {
+        if (hamster is null)
             return NotFound();
-        }
+        return Ok(hamster);
     }
 
     [HttpPost]
