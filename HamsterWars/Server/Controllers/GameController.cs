@@ -15,10 +15,6 @@ namespace HamsterWars.Server.Controllers
             this.gameService = gameService;
         }
 
-        //[HttpGet("GetAll")]
-        //public IEnumerable<HamsterDTO> GetAll() =>
-        //gameService.CreateHamsterDTOs();
-
         [HttpGet("CreateGame")]
         public Game CreateGame()
         {

@@ -48,7 +48,7 @@ public class HamsterController : ControllerBase
         _context.Hamsters.Add(hamster);
         await _context.SaveChangesAsync();
 
-        return NoContent();
+        return Ok();
     }
 
     [HttpPut("{id}")]

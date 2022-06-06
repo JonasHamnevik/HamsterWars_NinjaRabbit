@@ -1,9 +1,36 @@
 ﻿@page "/create"
+@using HamsterWars.Shared
+@inject HttpClient Http
 
 <h3>Create</h3>
 
+<EditForm Model="@newHamster" OnInvalidSubmit="AddHamster">
+    <div class="col-sm-6 mx-auto">
+        <div class="form">
+            <label for="name">Name</label>
+            <InputText @bind-Value="newHamster.Name" class="form-control" />
 
+            <label for="age">Age</label>
+            <InputNumber @bind-Value="newHamster.Age" class="form-control" />
+
+            <label for="image">Photo</label>
+            <InputFile @bind-Value="newHamster.ImageName" class="form-control"/>
+
+            <label for="favFood">Favourite Food</label>
+            <InputText name="favFood" @bind-Value="newHamster.FavouriteFood" class="form-control" />
+
+            <label for="loves">Loves</label>
+            <InputText name="loves" @bind-Value="newHamster.Loves" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary float-end">Add</button>
+    </div>
+</EditForm>
 
 @code {
+    Hamster newHamster = new Hamster();
 
+    async void AddHamster()
+    {
+        await Http.PostAsJsonAsync<Hamster>("api/Hamster/Create", newHamster);
+    }
 }
