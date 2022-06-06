@@ -55,11 +55,31 @@ public class GameService
         return game;
     }
 
-    public bool Play(int firstId, int secondId, int winnerId)
+    //public bool Play(int firstId, int secondId, int winnerId)
+    //{
+    //    var first = _context.Hamsters.Where(h => h.Id == firstId).FirstOrDefault<Hamster>();
+    //    var second = _context.Hamsters.Where(h => h.Id == secondId).FirstOrDefault<Hamster>();
+    //    if (firstId == winnerId)
+    //    {
+    //        first.Wins++;
+    //        first.Games++;
+    //        second.Games++;
+    //        second.Losses++;
+    //    }
+    //    else
+    //    {
+    //        second.Wins++;
+    //        second.Games++;
+    //        first.Games++;
+    //        first.Losses++;
+    //    }
+    //    _context.SaveChanges();
+    //    return true;
+    //}
+
+    public bool Play(Hamster first, Hamster second, int winnerId)
     {
-        var first = _context.Hamsters.Where(h => h.Id == firstId).FirstOrDefault<Hamster>();
-        var second = _context.Hamsters.Where(h => h.Id == secondId).FirstOrDefault<Hamster>();
-        if (firstId == winnerId)
+        if (first.Id == winnerId)
         {
             first.Wins++;
             first.Games++;
@@ -76,4 +96,21 @@ public class GameService
         _context.SaveChanges();
         return true;
     }
+
+    //public Task Win(Hamster hamster)
+    //{
+    //    hamster.Wins++;
+    //    hamster.Games++;
+    //    _context.SaveChanges();
+    //    return Task.CompletedTask;
+    //}
+
+    //public Task Loss(Hamster hamster)
+    //{
+    //    hamster.Wins++;
+    //    hamster.Games++;
+    //    _context.SaveChanges();
+    //    return Task.CompletedTask;
+    //}
+
 }

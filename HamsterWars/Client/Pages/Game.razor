@@ -1,4 +1,5 @@
 ﻿@page "/game"
+<link href="/css/styles/styles.css" rel="stylesheet" />
 @inject HttpClient Http
 @using HamsterWars.Shared
 @using Services
@@ -22,7 +23,7 @@ else
                         <h4 class="card-title text-center">@game.First.Name</h4>
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Age:<span class="badge bg-danger rounded-pill">@game.First.Age</span>
+                                Age:<span>@game.First.Age</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Favourite Food:<span class="badge bg-success rounded-pill">@game.First.FavouriteFood</span>
@@ -32,7 +33,7 @@ else
                             </li>
                         </ul>
                         <div>
-                            <button @onclick="() => Vote(game.First.Id)">Vote</button>
+                            <button @onclick="() => GameResult(game.First.Id)">Vote</button>
                         </div>
                     </div>
                 </div>
@@ -66,24 +67,39 @@ else
 }
 
 @code {
-    private GameService gameService;
     private Egame? game;
+
     protected override async Task OnInitializedAsync()
     {
         game = await Http.GetFromJsonAsync<Egame>("/api/Game/CreateGame");
     }
 
-    private async Task Vote(int id)
+    //private void Vote(int id)
+    //{
+    //    int winner = id;
+    //    int first = game.First.Id;
+    //    int second = game.Second.Id;
+
+
+    //    await Http.PutAsync($"api/Game/Play/{first/second/winner}");
+    //}
+
+    private async Task GameResult(int id)
     {
-        gameService.Play(game.First.Id, game.Second.Id, id);
-
-
-        //int winner = id;
-        //int first = game.First.Id;
-        //int second = game.Second.Id;
-
-        //await Http.PutAsJsonAsync<Egame>(HttpMethod.Put, "api/Game/Play/{first}/{second}/{winner}", );
+        await Http.PutAsJsonAsync<Egame>($"api/Game/Play{id}", game);
 
         await OnInitializedAsync();
     }
+
+    //private async Task VoteFirst()
+    //{
+    //    await Http.PutAsJsonAsync($"api/Game/Winn{game.First.Id}", game.First);
+    //    await Http.PutAsJsonAsync($"api/Game/Loss{game.Second.Id}", game.Second);
+
+    //    gameService.Play(game.First.Id, game.Second.Id, game.First.Id);
+
+    //    await OnInitializedAsync();
+    //}
+
+
 }
