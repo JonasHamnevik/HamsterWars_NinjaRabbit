@@ -1,5 +1,6 @@
 ﻿@page "/gallery"
 @inject HttpClient Http
+@inject IJSRuntime JSRuntime
 @using HamsterWars.Shared
 <link href="/css/styles/styles.css" rel="stylesheet" />
 
@@ -62,6 +63,9 @@ else
 
     private async Task Delete(int id)
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to delete this hamster?"))
+            return;
+
         await Http.DeleteAsync($"api/Hamster/Delete{id}");
         await OnInitializedAsync();
     }
