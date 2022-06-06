@@ -7,10 +7,6 @@
 <div>
     <h3 class="head">Gallery</h3>
 </div>
-<div>
-    <input type="text"/>
-    <input type="button" value="Search"/>
-</div>
 @if (hamsters is null)
 {
     <p><em>Loading...</em></p>
@@ -18,6 +14,14 @@
 else
 {
     <div class="row">
+        <div class="form-group">
+            <input class="form-control"
+                    @bind-value="searchTerm"
+                    id="search"
+                    placeholder="Search.."
+                    @bind-value:event="oninput"/>
+        </div>
+
         @foreach (var hamster in hamsters)
         {
             <div class="col-sm-4">
@@ -54,11 +58,16 @@ else
 }
 
 @code {
-    private Hamster[]? hamsters;
+    private Hamster[]? hamsterList;
+    private string? searchTerm { get; set; }
+
+    private IEnumerable<Hamster> hamsters =>
+        hamsterList.Where(h => string.IsNullOrEmpty(searchTerm) ||
+                        h.Name.ToLower().Contains(searchTerm.ToLower()));
 
     protected override async Task OnInitializedAsync()
     {
-        hamsters = await Http.GetFromJsonAsync<Hamster[]>("/api/hamster/GetAll");
+        hamsterList = await Http.GetFromJsonAsync<Hamster[]>("/api/hamster/GetAll");
     }
 
     private async Task Delete(int id)

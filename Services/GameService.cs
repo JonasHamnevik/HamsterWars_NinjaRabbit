@@ -12,26 +12,6 @@ public class GameService
         _context = context;
     }
 
-    //public static HamsterDTO HamsterToDTO(Hamster hamster)
-    //{
-    //    return new HamsterDTO()
-    //    {
-    //        Id = hamster.Id,
-    //        Name = hamster.Name,
-    //        Age = hamster.Age,
-    //        FavouriteFood = hamster.FavouriteFood,
-    //        Loves = hamster.Loves,
-    //        ImageName = hamster.ImageName
-    //    };
-    //}
-
-    //public IEnumerable<HamsterDTO> CreateHamsterDTOs()
-    //{
-    //    return _context.Hamsters
-    //        .Select(h => HamsterToDTO(h))
-    //        .ToList();
-    //}
-
     private int GetRandomHamsterId()
     {
         List<int> hamsterId = _context.Hamsters.Select(h => h.Id).ToList();
@@ -55,30 +35,10 @@ public class GameService
         return game;
     }
 
-    //public bool Play(int firstId, int secondId, int winnerId)
-    //{
-    //    var first = _context.Hamsters.Where(h => h.Id == firstId).FirstOrDefault<Hamster>();
-    //    var second = _context.Hamsters.Where(h => h.Id == secondId).FirstOrDefault<Hamster>();
-    //    if (firstId == winnerId)
-    //    {
-    //        first.Wins++;
-    //        first.Games++;
-    //        second.Games++;
-    //        second.Losses++;
-    //    }
-    //    else
-    //    {
-    //        second.Wins++;
-    //        second.Games++;
-    //        first.Games++;
-    //        first.Losses++;
-    //    }
-    //    _context.SaveChanges();
-    //    return true;
-    //}
-
     public bool Play(Hamster first, Hamster second, int winnerId)
     {
+        first = _context.Hamsters.Where(h => h.Id == first.Id).FirstOrDefault<Hamster>();
+        second = _context.Hamsters.Where(h => h.Id == second.Id).FirstOrDefault<Hamster>();
         if (first.Id == winnerId)
         {
             first.Wins++;
@@ -93,24 +53,7 @@ public class GameService
             first.Games++;
             first.Losses++;
         }
-        _context.SaveChanges();
+        _context.SaveChangesAsync();
         return true;
     }
-
-    //public Task Win(Hamster hamster)
-    //{
-    //    hamster.Wins++;
-    //    hamster.Games++;
-    //    _context.SaveChanges();
-    //    return Task.CompletedTask;
-    //}
-
-    //public Task Loss(Hamster hamster)
-    //{
-    //    hamster.Wins++;
-    //    hamster.Games++;
-    //    _context.SaveChanges();
-    //    return Task.CompletedTask;
-    //}
-
 }
