@@ -3,8 +3,13 @@
 @using HamsterWars.Shared
 <link href="/css/styles/styles.css" rel="stylesheet" />
 
-<h3 class="head">Gallery</h3>
-
+<div>
+    <h3 class="head">Gallery</h3>
+</div>
+<div>
+    <input type="text"/>
+    <input type="button" value="Search"/>
+</div>
 @if (hamsters is null)
 {
     <p><em>Loading...</em></p>
@@ -15,7 +20,7 @@ else
         @foreach (var hamster in hamsters)
         {
             <div class="col-sm-4">
-                <div class="container">
+                <div class="container shadow-lg">
                     <div><h4>@hamster.Name</h4></div>
                     <img class="image" src="/images/hamsters/@hamster.ImageName" alt="Hamster image">
                     <div class="middle">

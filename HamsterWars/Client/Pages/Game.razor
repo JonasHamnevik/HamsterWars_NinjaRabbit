@@ -18,7 +18,7 @@ else
         <div class="row">
             <div class="col-md-4">
                 <div class="card bg-light">
-                    <img class="card-img-top cardImg" src="/images/hamsters/@game.First.ImageName" alt="Card image">
+                    <img class="card-img-top gameImg" src="/images/hamsters/@game.First.ImageName" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title text-center">@game.First.Name</h4>
                         <ul class="list-group">
@@ -26,10 +26,10 @@ else
                                 Age:<span>@game.First.Age</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Favourite Food:<span class="badge bg-success rounded-pill">@game.First.FavouriteFood</span>
+                                Favourite Food:<span>@game.First.FavouriteFood</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Loves:<span class="badge bg-warning rounded-pill">@game.First.Loves</span>
+                                Loves:<span>@game.First.Loves</span>
                             </li>
                         </ul>
                         <div>
@@ -45,20 +45,23 @@ else
 
             <div class="col-md-4">
                 <div class="card bg-light">
-                    <img class="card-img-top cardImg" src="/images/hamsters/@game.Second.ImageName" alt="Card image">
+                    <img class="card-img-top gameImg" src="/images/hamsters/@game.Second.ImageName" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title text-center">@game.Second.Name</h4>
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Age:<span class="badge bg-danger rounded-pill">@game.Second.Age</span>
+                                Age:<span>@game.Second.Age</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Favourite Food:<span class="badge bg-success rounded-pill">@game.Second.FavouriteFood</span>
+                                Favourite Food:<span>@game.Second.FavouriteFood</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Loves:<span class="badge bg-warning rounded-pill">@game.Second.Loves</span>
+                                Loves:<span>@game.Second.Loves</span>
                             </li>
                         </ul>
+                        <div>
+                            <button @onclick="() => GameResult(game.Second.Id)">Vote</button>
+                        </div>
                     </div>
                 </div>
             </div>
