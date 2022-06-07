@@ -6,9 +6,9 @@
 
 <PageTitle>HamsterWars - Gallery</PageTitle>
 
-<div>
-    <h1 class="head">Meet our contestants!</h1>
-</div>
+
+<h1>Meet our contestants!</h1>
+
 @if (hamsterList is null)
 {
     <p><em>Loading...</em></p>
@@ -17,11 +17,11 @@ else
 {
     <div class="row">
         <div class="form-group">
-            <input class="form-control"
-                    @bind-value="searchTerm"
-                    id="search"
-                    placeholder="Search.."
-                    @bind-value:event="oninput"/>
+        <div class="col-md-3 mb-3 mt-3 card p-3 bg-light float-end">
+            <form class="row g-3">        
+                <input type="text" class="form-control" @bind-value="searchTerm" id="search" placeholder="Search..." @bind-value:event="oninput"/>
+            </form>
+        </div>
         </div>
 
         @foreach (var hamster in hamsters)
