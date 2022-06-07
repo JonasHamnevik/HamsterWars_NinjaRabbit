@@ -5,7 +5,8 @@
 @using Services
 @using Egame = HamsterWars.Shared.Game
 
-<h3>Game</h3>
+<PageTitle>HamsterWars - Game</PageTitle>
+
 
 @if (game is null)
 {
@@ -13,7 +14,7 @@
 }
 else
 {
-    <div><h1>Wich one is cutest?</h1></div>
+    <h1>Which one is cutest?</h1>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -32,9 +33,10 @@ else
                                 Loves:<span>@game.First.Loves</span>
                             </li>
                         </ul>
-                        <div>
-                            <button @onclick="() => GameResult(game.First.Id)">Vote</button>
-                        </div>
+                        <br />
+                    <div>
+                        <button type="button" class="btn btn-primary" @onclick="() => GameResult(game.First.Id)">Vote</button>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -59,8 +61,9 @@ else
                                 Loves:<span>@game.Second.Loves</span>
                             </li>
                         </ul>
+                        <br />
                         <div>
-                            <button @onclick="() => GameResult(game.Second.Id)">Vote</button>
+                            <button type="button" class="btn btn-primary" @onclick="() => GameResult(game.Second.Id)">Vote</button>
                         </div>
                     </div>
                 </div>

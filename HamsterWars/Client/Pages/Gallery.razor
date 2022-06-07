@@ -4,8 +4,10 @@
 @using HamsterWars.Shared
 <link href="/css/styles/styles.css" rel="stylesheet" />
 
+<PageTitle>HamsterWars - Gallery</PageTitle>
+
 <div>
-    <h3 class="head">Gallery</h3>
+    <h1 class="head">Meet our contestants!</h1>
 </div>
 @if (hamsters is null)
 {
@@ -49,8 +51,9 @@ else
                                 Games:<span class="badge bg-warning rounded-pill">@hamster.Games</span>
                             </li>
                         </ul>
-                    </div>
-                    <button class="oi oi-trash" @onclick="() => Delete(hamster.Id)"></button>
+                    <br />
+                    <button type="button" class="btn btn-outline-danger btn-sm oi oi-trash" @onclick="() => Delete(hamster.Id)"></button>
+                </div>
                 </div>
             </div>
         }
