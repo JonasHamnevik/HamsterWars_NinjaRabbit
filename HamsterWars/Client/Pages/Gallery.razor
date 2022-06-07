@@ -7,7 +7,7 @@
 <div>
     <h3 class="head">Gallery</h3>
 </div>
-@if (hamsters is null)
+@if (hamsterList is null)
 {
     <p><em>Loading...</em></p>
 }
@@ -63,7 +63,7 @@ else
 
     private IEnumerable<Hamster> hamsters =>
         hamsterList.Where(h => string.IsNullOrEmpty(searchTerm) ||
-                        h.Name.ToLower().Contains(searchTerm.ToLower()));
+                        h.Name.ToLower().Contains(searchTerm.ToLower())) ?? new List<Hamster>();
 
     protected override async Task OnInitializedAsync()
     {
