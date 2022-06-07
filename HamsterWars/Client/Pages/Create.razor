@@ -5,31 +5,51 @@
 <link href="/css/styles/styles.css" rel="stylesheet" />
 
 
-<h3>Create</h3>
+<h3>New hamster<span class="blinking-black">_</span></h3>
 
-<EditForm Model="@newHamster" OnValidSubmit="AddHamster">
+
+
+<EditForm Model="@newHamster" OnValidSubmit="AddHamster">    
     <DataAnnotationsValidator />
-    <div class="col-sm-6 mx-auto">
-        <div class="form">
-            <label for="name">Name</label>
+    <div class="col-md-6 mb-3 mt-3 card p-3 bg-light">
+        <div class="form row g-3">
+            
+            <div class="col-md-6">
+            <label for="name" class="form-label">Name</label>
             <InputText id="name" @bind-Value="newHamster.Name" class="form-control" />
+            </div>
 
-            <label for="age">Age</label>
+            <div class="col-md-6">
+            <label for="age" class="form-label">Age</label>
             <InputNumber id="age" @bind-Value="newHamster.Age" class="form-control" />
+            </div>
 
-            <label for="image">Photo</label>
+            <div class="col-md-6">
+            <label for="image" class="form-label">Photo</label>
             <InputText id="photo" @bind-Value="newHamster.ImageName" class="form-control" />
+            </div>
 
-            <label for="favFood">Favourite Food</label>
+            <div class="col-md-6">
+            <label for="favFood" class="form-label">Favourite Food</label>
             <InputText id="favFood" name="favFood" @bind-Value="newHamster.FavouriteFood" class="form-control" />
+            </div>
 
-            <label for="loves">Loves</label>
+            <div class="col-md-6">
+            <label for="loves" class="form-label">Loves</label>
             <InputText id="loves" name="loves" @bind-Value="newHamster.Loves" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-primary float-end">Add</button>
-        <ValidationSummary />
+            </div>
+
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>    
     </div>
+    </div>
+        <ValidationSummary />
+
 </EditForm>
+
+
 
 @code {
     private Hamster newHamster = new();
