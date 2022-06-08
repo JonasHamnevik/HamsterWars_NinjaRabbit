@@ -2,7 +2,6 @@
 <link href="/css/styles/styles.css" rel="stylesheet" />
 @inject HttpClient Http
 @using HamsterWars.Shared
-@using Services
 @using Egame = HamsterWars.Shared.Game
 
 <PageTitle>Hamster Wars - Game</PageTitle>
@@ -74,9 +73,11 @@ else
 
 @code {
     private Egame? game;
+    private Egame? result;
 
     protected override async Task OnInitializedAsync()
     {
+        result = game;
         game = await Http.GetFromJsonAsync<Egame>("/api/Game/CreateGame");
     }
 
