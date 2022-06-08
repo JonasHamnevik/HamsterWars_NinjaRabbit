@@ -39,6 +39,7 @@ public class GameService
     {
         first = _context.Hamsters.Where(h => h.Id == first.Id).FirstOrDefault<Hamster>();
         second = _context.Hamsters.Where(h => h.Id == second.Id).FirstOrDefault<Hamster>();
+
         if (first.Id == winnerId)
         {
             first.Wins++;
