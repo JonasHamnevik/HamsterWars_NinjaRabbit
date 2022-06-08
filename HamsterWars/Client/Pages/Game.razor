@@ -35,7 +35,7 @@ else
                         </ul>
                         <br />
                         <div>
-                            <button type="button" class="btn btn-primary" @onclick="() => GameResult(game.First.Id), Result">Vote</button>
+                            <button type="button" class="btn btn-primary" @onclick="() => GameResult(game.First.Id)">Vote</button>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ else
                         </ul>
                         <br />
                         <div>
-                            <button type="button" class="btn btn-primary" @onclick="() => GameResult(game.Second.Id), Result">Vote</button>
+                            <button type="button" class="btn btn-primary" @onclick="() => GameResult(game.Second.Id)">Vote</button>
                         </div>
                     </div>
                 </div>
@@ -74,8 +74,6 @@ else
 
 @code {
     private Egame? game;
-    private Hamster? Winner { get; set; }
-    private Hamster? Loser { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -87,19 +85,5 @@ else
         await Http.PutAsJsonAsync<Egame>($"api/Game/Play{id}", game);
 
         await OnInitializedAsync();
-    }
-
-    private void Result(Hamster winner)
-    {
-        Winner = winner;
-
-        if (game.First == Winner)
-        {
-            Loser = game.Second;
-        }
-        else
-        {
-            Loser = game.First;
-        }
     }
 }
