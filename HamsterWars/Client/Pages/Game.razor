@@ -84,32 +84,11 @@ else
         game = await Http.GetFromJsonAsync<Egame>("/api/Game/CreateGame");
     }
 
-    //private void Vote(int id)
-    //{
-    //    int winner = id;
-    //    int first = game.First.Id;
-    //    int second = game.Second.Id;
-
-
-    //    await Http.PutAsync($"api/Game/Play/{first/second/winner}");
-    //}
-
     private async Task GameResult(int id)
     {
         await Http.PutAsJsonAsync<Egame>($"api/Game/Play{id}", game);
 
         await OnInitializedAsync();
     }
-
-    //private async Task VoteFirst()
-    //{
-    //    await Http.PutAsJsonAsync($"api/Game/Winn{game.First.Id}", game.First);
-    //    await Http.PutAsJsonAsync($"api/Game/Loss{game.Second.Id}", game.Second);
-
-    //    gameService.Play(game.First.Id, game.Second.Id, game.First.Id);
-
-    //    await OnInitializedAsync();
-    //}
-
 
 }
