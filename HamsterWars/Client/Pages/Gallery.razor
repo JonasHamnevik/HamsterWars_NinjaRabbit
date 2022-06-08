@@ -6,23 +6,23 @@
 
 <PageTitle>Hamster Wars - Gallery</PageTitle>
 
-
-<h1>Meet our contestants!</h1>
-
 @if (hamsterList is null)
 {
     <p><em>Loading...</em></p>
 }
+
 else
 {
+    <div class="d-flex mb-3 justify-content-between">
+        <h1>Meet our contestants!</h1>
+            <div class="col-md-3 mb-3 mt-3 card p-3 bg-light">
+                <form class="row g-3">        
+                    <input type="text" class="form-control" @bind-value="searchTerm" id="search" placeholder="Search..." @bind-value:event="oninput"/>
+                </form>
+            </div>
+    </div>
+    
     <div class="row">
-        <div class="form-group">
-        <div class="col-md-3 mb-3 mt-3 card p-3 bg-light float-end">
-            <form class="row g-3">        
-                <input type="text" class="form-control" @bind-value="searchTerm" id="search" placeholder="Search..." @bind-value:event="oninput"/>
-            </form>
-        </div>
-        </div>
 
         @foreach (var hamster in hamsters)
         {
@@ -52,7 +52,7 @@ else
                             </li>
                         </ul>
                     <br />
-                    <button type="button" class="btn btn-outline-danger btn-sm oi oi-trash" @onclick="() => Delete(hamster.Id)"></button>
+                    <button type="button" class="btn btn-outline-danger btn-sm oi oi-trash float-end" @onclick="() => Delete(hamster.Id)"></button>
                 </div>
                 </div>
             </div>
