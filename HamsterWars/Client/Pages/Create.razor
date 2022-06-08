@@ -26,11 +26,6 @@
             </div>
 
             <div class="col-md-6">
-            <label for="image" class="form-label">Photo</label>
-            <InputText id="photo" @bind-Value="newHamster.ImageName" class="form-control" />
-            </div>
-
-            <div class="col-md-6">
             <label for="favFood" class="form-label">Favourite Food</label>
             <InputText id="favFood" name="favFood" @bind-Value="newHamster.FavouriteFood" class="form-control" />
             </div>
@@ -38,6 +33,24 @@
             <div class="col-md-6">
             <label for="loves" class="form-label">Loves</label>
             <InputText id="loves" name="loves" @bind-Value="newHamster.Loves" class="form-control" />
+            </div>
+
+            <div class="col-md-6">
+            <label for="image" class="form-label">Available photos</label>
+                <form class="form-control">        
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="/images/hamsters/hamster-36.jpg" target="_blank">hamster-36.jpg</a></li>
+                        <li class="list-group-item"><a href="/images/hamsters/hamster-37.jpg" target="_blank">hamster-37.jpg</a></li>
+                        <li class="list-group-item"><a href="/images/hamsters/hamster-38.jpg" target="_blank">hamster-38.jpg</a></li>
+                        <li class="list-group-item"><a href="/images/hamsters/hamster-39.jpg" target="_blank">hamster-39.jpg</a></li>
+                        <li class="list-group-item"><a href="/images/hamsters/hamster-40.jpg" target="_blank">hamster-40.jpg</a></li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+            <label for="image" class="form-label">Photo</label>
+            <InputText id="photo" @bind-Value="newHamster.ImageName" class="form-control" data-bs-toggle="tooltip" title="Input availabe photo" />
             </div>
 
         
