@@ -68,6 +68,37 @@ else
                 </div>
             </div>
         </div>
+    
+
+@if (result is null)
+{
+        
+}
+
+else
+{
+    <br />
+            
+            <div class="col-md-11">
+                <div class="alert alert-success">
+                <div class="d-flex justify-content-between">    
+                                      
+                    <strong>Previous game</strong>
+
+                    <b>@result.First.Name</b>
+                    Wins: @result.First.Wins
+                    Losses: @result.First.Losses
+                    Games: @result.First.Games
+                    <b>@result.Second.Name</b>
+                    Wins: @result?.Second.Wins
+                    Losses: @result.Second.Losses
+                    Games: @result.Second.Games
+                 </div>
+                 </div>
+            </div>
+        
+    }
+    
     </div>
 }
 
